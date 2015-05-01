@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.regex.*;
 
-class Count
+class Counter
 {
 public static void main(String args[]) throws Exception
 {
