@@ -2,7 +2,10 @@ public class Question9
                                       {
                                         public static void main(String[] args)
                                         {
-                                          System.out.println("Zahlen");
+                                          if( args.length < 1 ) {
+       System.out.println("Fehler: Bitte eine Zahl als Argument angeben.");
+       System.exit(1);
+}
                                           int v1;
                                           v1 = Integer.valueOf(args[0]).intValue();
                                           
