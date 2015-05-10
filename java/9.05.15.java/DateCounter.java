@@ -54,7 +54,7 @@ public class DateCounter {
         String argument = firstArgument( args );
         Calendar cal = parseCalendar( argument );
         long diffTage = diffFromToday( cal );
-        System.out.println( "Der Tagesunterschied beträgt " + diffTage + " Tage" );
+        System.out.println( "Der Tagesunterschied zu " + argument + " beträgt " + diffTage + " Tage" );
     }
 }
 
