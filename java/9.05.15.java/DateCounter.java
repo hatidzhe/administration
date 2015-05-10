@@ -14,18 +14,20 @@ public class DateCounter {
         return daysDiff;
     }
 
+    // calculate the difference from today in days
     static long diffFromToday( Calendar cal ) {
-        long days = 0;
-        return 0;
+
+        Calendar today = Calendar.getInstance();
+        long daysDiff  = diffInDays( cal, today );
+
+        return daysDiff;
     }
 
     public static void main( String[] args ) {
         Calendar Anfangsdatum = Calendar.getInstance();
-        Calendar Enddatum = Calendar.getInstance();
-        Anfangsdatum.set( 2015, 04, 21 );
-        Enddatum.set( 2015, 05, 10 );
+        Anfangsdatum.set( 2015, 03, 21 ); // 03 is april
 
-        long diffTage = diffInDays( Anfangsdatum, Enddatum );
+        long diffTage = diffFromToday( Anfangsdatum );
         System.out.println( "Der Tagesunterschied beträgt " + diffTage + " Tage" );
     }
 }
