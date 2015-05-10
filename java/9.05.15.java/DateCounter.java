@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.*;
 
 public class DateCounter {
 
@@ -23,11 +24,21 @@ public class DateCounter {
         return daysDiff;
     }
 
-    public static void main( String[] args ) {
-        Calendar Anfangsdatum = Calendar.getInstance();
-        Anfangsdatum.set( 2015, 03, 21 ); // 03 is april
+    static Calendar parseCalendar( String arg ) {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat parser = new SimpleDateFormat( "dd.MM.yyyy" );
+        try {
+            Date date = parser.parse( arg );
+            cal.setTime( date );
+        } catch( Exception ex ) {
+            System.err.println( "Error: invalid argument: " + ex.toString() );
+        }
+        return cal;
+    }
 
-        long diffTage = diffFromToday( Anfangsdatum );
+    public static void main( String[] args ) {
+        Calendar cal = parseCalendar( "21.04.2015" );
+        long diffTage = diffFromToday( cal );
         System.out.println( "Der Tagesunterschied beträgt " + diffTage + " Tage" );
     }
 }
