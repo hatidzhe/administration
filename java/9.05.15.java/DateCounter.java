@@ -24,6 +24,7 @@ public class DateCounter {
         return daysDiff;
     }
 
+    // parse String to Calendar
     static Calendar parseCalendar( String arg ) {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat parser = new SimpleDateFormat( "dd.MM.yyyy" );
@@ -36,8 +37,19 @@ public class DateCounter {
         return cal;
     }
 
+    // returns the first argument as String if available, else exits
+    static String firstArgument( String[] args ) {
+        if( args.length != 1 ) {
+            System.err.println( "Error: Not enough arguments"  );
+            System.err.println( "Usage: java DateCounter 21.04.2014"  );
+            System.exit( 1 );
+        }
+        return args[0];
+    }
+
     public static void main( String[] args ) {
-        Calendar cal = parseCalendar( "21.04.2015" );
+        String argument = firstArgument( args );
+        Calendar cal = parseCalendar( argument );
         long diffTage = diffFromToday( cal );
         System.out.println( "Der Tagesunterschied beträgt " + diffTage + " Tage" );
     }
