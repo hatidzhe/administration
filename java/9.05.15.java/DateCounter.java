@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Datecounter{
+public class DateCounter{
  public static void main(String[] args){
  Calendar Anfangsdatum = Calendar.getInstance();
  Calendar Enddatum = Calendar.getInstance();
