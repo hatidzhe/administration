@@ -28,22 +28,25 @@ public class DateCounter {
     static Calendar parseCalendar( String arg ) {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat parser = new SimpleDateFormat( "dd.MM.yyyy" );
+
         try {
             Date date = parser.parse( arg );
             cal.setTime( date );
         } catch( Exception ex ) {
             System.err.println( "Error: invalid argument: " + ex.toString() );
         }
+
         return cal;
     }
 
     // returns the first argument as String if available, else exits
     static String firstArgument( String[] args ) {
         if( args.length != 1 ) {
-            System.err.println( "Error: Not enough arguments"  );
-            System.err.println( "Usage: java DateCounter 21.04.2014"  );
+            System.err.println( "Error: Not enough arguments" );
+            System.err.println( "Usage: java DateCounter 21.04.2014" );
             System.exit( 1 );
         }
+
         return args[0];
     }
 
